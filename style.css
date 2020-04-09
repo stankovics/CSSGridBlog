@@ -1,0 +1,67 @@
+:root{
+    --yellow:#ffc600;
+}
+html{
+    color:#444;
+    font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+h1, h2{
+    font-size: 80px;
+    font-style:italic;
+    font-weight: 100;
+    margin: 0;
+}
+p{
+    line-height: 1.8;
+}
+a {
+    color: black;
+    text-decoration: underline wavy var(--yellow);
+}
+img{
+    max-width: 100%;
+}
+
+
+.post{   /*Wrapper, class of <article>*/
+    display: grid;
+    grid-template-columns: 3fr 12fr 5fr;
+    grid-gap:10px 50px; /*row-gap:10px; column-gap:50px;*/
+    margin:200px auto; /*top and bottom margin 200px, left and rigt margin auto*/
+    max-width:1000px; /*maximum width of element*/
+}
+.post>*{  /*selects all elements inside .post class*/
+    grid-column:2/-2; /*centering text, start at column line 2 ant ends on -2 column line*/
+}
+.post>blockquote{
+    grid-column: 1/-1; /*start on 1st line and ends on -1*/
+    font-size: 60px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+.post>figure{
+    grid-column: 1/-1; /*start on line 1 ends on line -1*/
+    margin:0;
+}
+figcaption{
+    font-size:10px ;
+}
+.tip {
+    background: #FAFAFA;
+    padding: 10px;
+    grid-row: span 5; /*it can take up to 5 rows*/
+    align-self: start;
+  }
+
+  .tip-left {
+    grid-column: 1; /*start on line 1*/
+    text-align: right;
+    border-right: 2px solid var(--yellow);
+  }
+
+  .tip-right {
+    grid-column: span 1 /-1; /*it ends on -1 line and it will take 1 column*/
+    border-left: 2px solid var(--yellow);
+  }
